@@ -1,3 +1,4 @@
+<script src="http://cdn.ckeditor.com/4.5.11/standard/ckeditor.js"></script>
 <h2> <?= $title ?> </h2>
 
 <?php 
@@ -13,3 +14,9 @@
 	<input type="hidden" name="postsid" value=<?php echo $posts['postsid']; ?>>
 	<button type="submit" class="btn btn-default">Submit</button>
 </form>
+
+
+
+<script>
+	CKEDITOR.replace('editor1');
+</script>

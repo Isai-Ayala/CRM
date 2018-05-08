@@ -1,3 +1,4 @@
+<script src="http://cdn.ckeditor.com/4.5.11/standard/ckeditor.js"></script>
 <h2> <?= $title ?> </h2>
 
 <?php 
@@ -13,3 +14,8 @@
 	<input type="hidden" name="callFromForm" value="call made from a form">
 	<button type="submit" class="btn btn-default">Submit</button>
 </form>
+
+
+<script>
+	CKEDITOR.replace('editor1');
+</script>

@@ -23,7 +23,8 @@
 		{
 			$data = array(
 				'post' => $this->input->post('post'),
-				'date' => date("Y-m-d H:i:s"));
+				'date' => date("Y-m-d H:i:s"),
+				'userid' => $this->session->userdata('userid'));
 
 			return $this->db->insert('posts',$data);
 		}

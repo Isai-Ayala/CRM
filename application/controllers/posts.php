@@ -27,6 +27,9 @@
 		public function create()
 		{
 
+			if(!$this->session->userdata('logged_in'))
+				redirect('users/login');
+
 			$data['title'] = ucfirst('Create Post');
 
 			$this->form_validation->set_rules('post', 'post', 'required');
@@ -42,6 +45,9 @@
 			else
 			{
 				$this->post_model->create_post();
+
+				$this->session->set_flashdata('post_created', 'Your post has been successfully created!');
+
 				redirect('/posts');
 			}
 		}
@@ -49,6 +55,9 @@
 		public function delete($id)
 		{
 			$this->post_model->delete_post($id);
+
+			$this->session->set_flashdata('post_deleted', 'Your post has been successfully deleted!');
+
 			redirect('/posts');
 		}
 
@@ -72,6 +81,9 @@
 		public function update()
 		{
 			$this->post_model->update_post();
+
+			$this->session->set_flashdata('post_updated', 'Your post has been successfully updated!');
+
 			redirect('posts');
 		}
 	}
